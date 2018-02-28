@@ -2,6 +2,7 @@ var express = require('express');
 var app = express();
 var path = require('path');
 var bodyParser = require('body-parser');
+const mathFunctions = require('./files/myMathFunctions');
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
@@ -22,18 +23,8 @@ app.get('/script.js', function(req,res) {
 
 app.post('/add', function(req, res) {
     let reqBody = req.body;
-    res.send("" + sum(req.body.number1, req.body.number2));
+    res.send("" + mathFunctions.sum(req.body.number1, req.body.number2));
 });
-
-function sum(a,b) {
-    if (!(typeof a === 'number' && !isNaN(a) &&
-    typeof b === 'number' && !isNaN(b))) {
-    throw new TypeError(
-      'sum(): Both arguments must be numbers. Got: "' + a + '" and "' + b + '"'
-    );
-  }
-  return a + b;
-};
 
 module.exports = {
     start: function () {
