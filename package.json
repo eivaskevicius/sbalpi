@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/eivaskevicius/sbalpi.git"
+    "url": "git@github.com:eivaskevicius/sbalpi.git"
   },
   "author": "",
   "license": "ISC",
@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/eivaskevicius/sbalpi#readme",
   "dependencies": {
-    "express": "^4.16.2"
+    "express": "^4.16.2",
+    "jest": "^22.4.2"
   }
 }
