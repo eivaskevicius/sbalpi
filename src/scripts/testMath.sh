@@ -3,7 +3,7 @@
 set -e -u -x
 
 ls -la
-cp -r node_modules /resource-sbalpi
+cp -r node_modules resource-sbalpi
 cd node_modules
 ls -la
 cd ../resource-sbalpi
