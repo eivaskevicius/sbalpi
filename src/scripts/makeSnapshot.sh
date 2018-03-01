@@ -2,7 +2,7 @@
 
 set -e -u -x
 
-git clone resource-sbalpi-snap snapshot
+git clone resource-sbalpi-dev snapshot
 cp -r node_modules snapshot
 cd snapshot
 ls -la
