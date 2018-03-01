@@ -8,9 +8,10 @@ image_resource:
     tag: latest
 
 inputs:
-  - name: resource-sbalpi
-outputs:
-  - name: resource-sbalpi-installed
+- name: resource-sbalpi
+
+caches:
+- path: resource-sbalpi/node_modules
 
 run:
   path: sh
