@@ -10,7 +10,7 @@ image_resource:
 inputs:
   - name: resource-sbalpi
 outputs:
-  - name: resourse-sbalpi-installed
+  - name: resource-sbalpi-installed
 
 run:
   path: sh
