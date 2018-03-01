@@ -3,7 +3,7 @@
 set -e -u -x
 
 ls -la
-mv node_modules resource-sbalpi
+mv /node_modules /resource-sbalpi
 cd resource-sbalpi
 ls -la 
 npm test
