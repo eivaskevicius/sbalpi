@@ -2,4 +2,4 @@
 
 set -e -u -x
 
-cd resource-sbalpi && ls -la
+cd resource-sbalpi && npm install
