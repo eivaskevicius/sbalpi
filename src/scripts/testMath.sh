@@ -2,6 +2,7 @@
 
 set -e -u -x
 
-ls -la
-cd resource-sbalpi
-ls -la
+cd resource-sbalpi && npm test
+# ls -la
+# cd resource-sbalpi
+# ls -la

@@ -1,0 +1,42 @@
+resources:
+- name: resource-sbalpi
+  type: git
+  source:
+    uri: https://github.com/eivaskevicius/sbalpi.git
+
+jobs:
+- name: job-install-node-dependencies
+  serial: true
+  plan:
+  - get: resource-sbalpi
+    trigger: true
+  - task: install dependencies
+    config:
+      platform: linux
+      image_resource:
+        type: docker-image
+        source:
+          repository: node
+          tag: latest
+      inputs:
+      - name: resource-sbalpi 
+      outputs:
+      - name: installed-node
+      run:
+        path: sh
+        args: [resource-sbalpi/src/scripts/nodeDependencies.sh]
+  - task: test the math
+    config:
+      platform: linux
+      image_resource:
+        type: docker-image
+        source:
+          repository: node
+          tag: latest
+      inputs:
+      - name: resource-sbalpi
+      - name: installed-node
+      run:
+        path: sh
+        args: [resource-sbalpi/src/scripts/testMath.sh]
+  
