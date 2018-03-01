@@ -2,5 +2,8 @@
 
 set -e -u -x
 
-cd resource-sbalpi && npm install
-cp -r * ../installed-node
+cd installed-node
+touch fil1
+
+# cd resource-sbalpi && npm install
+# cp -r * ../installed-node
