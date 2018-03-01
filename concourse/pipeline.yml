@@ -4,38 +4,19 @@ resources:
   type: git
   source:
     uri: https://github.com/eivaskevicius/sbalpi.git
-# - name: resource-node
-#   type: docker-image
-#   source: { repository: node }
 
 jobs:
 - name: job-install-node-dependencies
   serial: true
   plan:
   - get: resource-sbalpi
-  # - get: resource-node
+    trigger: true
   - task: install dependencies
-    file: resource-sbalpi/concourse/install_dependencies.yml
-  # - task: install npm dependencies
-  #   config:
-  #     platform: linux
-  #     image_resource:
-  #       type: docker-image
-  #       source: { repository: busybox }
-  #     inputs:
-  #       - name: resource-sbalpi
-  #       - name: resource-node
-      # run:
-      #   path: resource-sbalpi/concourse/install_dependencies.yml
-  
-  # - task: test the math
-  #   config:
-  #     platform: linux
-  #     image_resource: 
-  #       type: docker-image
-  #       source: { repository: node }
-  #     inputs:
-  #       - name: resourse-sbalpi
-  #     run:
-  #       path: resourse-sbalpi
-  #       args: [npm test]
+    file: resource-sbalpi/concourse/installDependencies.yml
+- name: job-test-the-math
+  plan:
+  - get: resource-sbalpi
+    trigger: true
+    passed: [job-install-node-dependencies]
+  - task: test the math
+    file: resource-sbalpi/concourse/testMath.yml
