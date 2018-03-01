@@ -2,4 +2,4 @@
 
 set -e -u -x
 
-cd installed-node && ls -la
+cd ls -la
