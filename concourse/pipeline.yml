@@ -24,8 +24,8 @@ jobs:
         - name: resource-sbalpi
         - name: resource-node
       run:
-        path: ls
-        # args: [resource-sbalpi/src/scripts]
+        path: sh
+        args: [resource-sbalpi/src/scripts/nodeDependencies.sh]
   
   # - task: test the math
   #   config:
