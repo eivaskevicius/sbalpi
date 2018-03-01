@@ -8,8 +8,8 @@ image_resource:
     tag: latest
 
 inputs:
-  - name: resource-sbalpi
+  - name: resource-sbalpi-installed
 
 run:
   path: sh
-  args: [resource-sbalpi/src/scripts/testMath.sh]
+  args: [resource-sbalpi-installed/src/scripts/testMath.sh]
