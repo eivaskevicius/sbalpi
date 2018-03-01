@@ -37,7 +37,7 @@ jobs:
           tag: latest
       inputs:
       - name: resource-sbalpi
-      - name: installed-node
+      - name: node_modules
       run:
         path: sh
         args: [resource-sbalpi/src/scripts/testMath.sh]
