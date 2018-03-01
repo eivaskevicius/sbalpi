@@ -20,8 +20,8 @@ jobs:
           tag: latest
       inputs:
       - name: resource-sbalpi 
-      outputs:
-      - name: installed-node
+      caches:
+      - path: resource-sbalpi/node_modules
       run:
         path: sh
         args: [resource-sbalpi/src/scripts/nodeDependencies.sh]
