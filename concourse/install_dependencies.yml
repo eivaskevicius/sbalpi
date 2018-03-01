@@ -11,4 +11,5 @@ inputs:
   - name: resource-sbalpi
 
 run:
-  path: resource-sbalpi/src/scripts/nodeDependencies.sh
+  path: sh
+  args: [resource-sbalpi/src/scripts/nodeDependencies.sh]
