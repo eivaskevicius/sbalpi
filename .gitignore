@@ -1,3 +1,6 @@
+#sensitive data
+concourse
+
 # Logs
 logs
 *.log
