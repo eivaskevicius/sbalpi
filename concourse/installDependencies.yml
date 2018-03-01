@@ -14,7 +14,7 @@ caches:
 - path: resource-sbalpi/node_modules
 
 outputs:
-- name: node_modules
+- name: resource-sbalpi
 
 run:
   path: sh
