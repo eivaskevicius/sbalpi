@@ -2,4 +2,4 @@
 
 set -e -u -x
 
-cd resource-sbalpi && npm test
+cd resource-sbalpi && ls -la
