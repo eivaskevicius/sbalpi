@@ -2,13 +2,6 @@
 
 set -e -u -x
 
-ls -la
 cp -r node_modules resource-sbalpi
-cd node_modules
-ls -la
-cd ../resource-sbalpi
-ls -la 
+cd resource-sbalpi
 npm test
-# ls -la
-# cd resource-sbalpi
-# ls -la
