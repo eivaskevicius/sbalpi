@@ -1,4 +1,3 @@
----
 resources:
 - name: resource-sbalpi
   type: git
@@ -12,12 +11,36 @@ jobs:
   - get: resource-sbalpi
     trigger: true
   - task: install dependencies
-    file: resource-sbalpi/concourse/installDependencies.yml
-- name: job-test-the-math
-  plan:
+    config:
+      platform: linux
+      image_resource:
+        type: docker-image
+        source:
+          repository: node
+          tag: latest
+      inputs:
+      - name: resource-sbalpi 
+      caches:
+      - path: resource-sbalpi/node_modules
+      outputs:
+      - name: node_modules
+      run:
+        path: sh
+        args: [resource-sbalpi/src/scripts/nodeDependencies.sh]
   - task: test the math
     config:
+      platform: linux
+      image_resource:
+        type: docker-image
+        source:
+          repository: node
+          tag: latest
       inputs:
       - name: resource-sbalpi
-      - name: installed-node
-    file: resource-sbalpi/concourse/testMath.yml
+      - name: node_modules
+      caches:
+      - path: resource-sbalpi/node_modules
+      run:
+        path: sh
+        args: [resource-sbalpi/src/scripts/testMath.sh]
+  
