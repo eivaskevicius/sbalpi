@@ -15,5 +15,8 @@ jobs:
     file: resource-sbalpi/concourse/installDependencies.yml
 - name: job-test-the-math
   plan:
+  - get: resource-sbalpi
+    trigger: true
+    passed: [job-install-node-dependencies]
   - task: test the math
     file: resource-sbalpi/concourse/testMath.yml
