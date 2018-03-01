@@ -9,6 +9,7 @@ resources:
   source:
     uri: https://github.com/eivaskevicius/sbalpi.git
     branch: snapshot
+    private_key: ((publishing-private-key))
 
 jobs:
 - name: job-install-node-dependencies
