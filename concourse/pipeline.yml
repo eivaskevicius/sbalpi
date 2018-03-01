@@ -7,7 +7,7 @@ resources:
 - name: resource-sbalpi-snap
   type: git
   source:
-    uri: https://github.com/eivaskevicius/sbalpi.git
+    uri: ((publishing-url))
     branch: snapshot
     private_key: ((publishing-private-key))
 
@@ -65,7 +65,7 @@ jobs:
       run:
         path: sh
         args: [resource-sbalpi-dev/src/scripts/makeSnapshot.sh]
-      - put: resource-sbalpi-snap
-        params:
-          repository: snapshot
+  - put: resource-sbalpi-snap
+    params:
+      repository: snapshot
         
