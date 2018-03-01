@@ -22,6 +22,8 @@ jobs:
       - name: resource-sbalpi 
       caches:
       - path: resource-sbalpi/node_modules
+      outputs:
+      - name: node_modules
       run:
         path: sh
         args: [resource-sbalpi/src/scripts/nodeDependencies.sh]
