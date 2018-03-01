@@ -43,7 +43,7 @@ jobs:
           repository: node
           tag: latest
       inputs:
-      - name: resource-sbalpi
+      - name: resource-sbalpi-dev
       - name: node_modules
       caches:
       - path: resource-sbalpi-dev/node_modules
@@ -58,7 +58,7 @@ jobs:
         source:
           repository: busybox
       inputs:
-      - name: resource-sbalpi
+      - name: resource-sbalpi-dev
       - name: node_modules
       outputs:
       - name: snapshot

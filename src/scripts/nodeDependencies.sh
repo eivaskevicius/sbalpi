@@ -2,5 +2,5 @@
 
 set -e -u -x
 
-cd resource-sbalpi && npm install
+cd resource-sbalpi-dev && npm install
 cp -r node_modules ..
