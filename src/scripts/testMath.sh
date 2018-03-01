@@ -2,4 +2,4 @@
 
 set -e -u -x
 
-cd ls -la
+ls -la
