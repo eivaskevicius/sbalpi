@@ -4,10 +4,9 @@ set -e -u -x
 
 git config --global user.email "e.ivaskevicius@iplabs.de"
 git config --global user.name "eivaskevicius"
-git clone resource-sbalpi-snap snapshot-node
-cp snapshot/sbalpi* snapshot-node
+cp -r node_modules resource-sbalpi-dev
 
-cd snapshot-node
+cd 
 
 git add -A
 git status
