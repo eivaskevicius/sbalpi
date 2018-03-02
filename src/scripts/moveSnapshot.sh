@@ -9,13 +9,6 @@ cp snapshot/sbalpi* snapshot-node
 
 cd snapshot-node
 
-npm remove jest
-rm -r src/__test__
-
-npm pack
-
-ls -la
-
 git add -A
 git status
 git commit -m "add snapshot"
