@@ -18,3 +18,4 @@ ls -la
 git add -A
 git status
 git commit -m "add snapshot"
+git pull
