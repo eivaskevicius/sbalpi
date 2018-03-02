@@ -13,3 +13,8 @@ git add -A
 git status
 git commit -m "add snapshot"
 git pull
+git checkout develop
+npm version patch
+git commit -m "change version"
+git push
+git checkout snapshot
