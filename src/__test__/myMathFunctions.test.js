@@ -15,7 +15,7 @@ test('proves 5 to be number', () => {
 });
 
 test('proves NaN is not a number', () => {
-    expect(myMathFunctions.isANumber(NaN)).not.toBeTruthy();
+    expect(myMathFunctions.isANumber(5)).not.toBeTruthy();
 });
 
 test('proves "test" is not a number', () => {
